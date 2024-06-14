@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: left;
+        z-index: 999; /* Pastikan z-index navbar lebih rendah dari card  supaya tampilan card berada di atas sendiri*/ 
+        }
+        .brand-container {
+        display: flex;
+        align-items: center;
+        }
+        .nav-tabs { 
+        display: flex;
+        margin-bottom: 0;
+        align-items: center;
+        }
+        .navbar-brand {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 35px;
+        font-style: oblique;
+        color: black;
+        }
+        .container-fluid{
+        background-color: #FFE2B5;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 50px;
+        z-index: 999;
+        position:fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        }        
+    </style>
+</head>
+<body class="vote">
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+          <div class="brand-container">
+            <img src="../images/LOGO (1).png" alt="Logo" width="80" height="74" class="d-inline-block align-text-top">
+            <a class="navbar-brand" href="#">Merchantry</a>
+          </div>
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link"  href="../index.html" style="color: black" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  href="categori.html" style="color: black" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Category</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="uservoting.html"  style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Voting</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Login.html" style="color: black" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Login</a>
+    
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="keranjang.html">
+                <img src="images_navbar/keranjang.png" alt="Descriptive text" width="50" height="50">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    <section class="IdeaVoting" id="IdeaVoting">
+        <div class="row">
+            <div class="image">
+                <img src="images_navbar/voting/FotoVoting.png" alt="">
+            </div>
+        
+            <form action="" class="kotak">
+                <img src="images_navbar/voting/WujudkanGayamu.png" class="large-image" >
+                    <input type="text" placeholder="Nama" class="box">
+                    <input type="email" placeholder="Email" class="box">
+                    <textarea name="" class="box" placeholder="Ide, Masukkan dan Saran" id="" cols="30" rows="10"></textarea>
+                    <input type="submit" value="KIRIM" class="btn">
+            </form>
+        </div>
+    </section>
+    
+        <div class="ideas-section">
+                <div class="card">
+                    <div class="profile-pic"><img src="images_navbar/voting/Profile.png" alt="Profile Pic"></div>
+                    <p>Kemeja kasual lengan panjang dengan motif batik modern untuk pria</p>
+                    <button class="vote-button">Vote</button>  
+                </div>
+                <div class="card">
+                    <div class="profile-pic"><img src="images_navbar/voting/Profile.png" alt="Profile Pic"></div>
+                    <p>Celana kulot motif bunga untuk tampilan kasual yang segar dan feminim</p>
+                    <button class="vote-button">Vote</button>
+                </div>  
+        </div>  
+    
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const voteButtons = document.querySelectorAll('.vote-button');
+        
+                    voteButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            alert('Terima kasih atas voting Anda!');
+                            // Tambahkan logika untuk menangani voting, misalnya, kirim data ke server.
+                        });
+                    });
+                });
+            </script>
+    <footer>
+        <div id="footer">
+            <div class="contact">
+              <a href="../index.html"><img src="../images/LOGO (1).png" alt="" /></a>
+              <p> </p>
+              <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">Contact</h3>
+              <address>
+                <p><b>Address:</b> Bukit Cemara Tujuh Blok 9 Kav 67</p>
+                <p><b>Phone:</b> 081937539482</p>
+                <p><b>Hours</b> 10:00 - 18:00. Mon - Sat</p>
+              </address>
+            </div>
+            <div class="about">
+              <br>
+              <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">About</h3>
+              <p></p> 
+              <a href="../footer/aboutUs.html">About Us</a>
+              <a href="#">Delivery Information</a>
+              <a href="../footer/ketentuan.html">Persyaratan & Ketentuan</a>
+              <!-- <a href="#">Terms & Conditions</a>  -->
+              <a href="https://wa.me/+6281937539482">Contact Us</a>
+            </div>
+            <div class="myaccount ">
+              <br>
+              <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">My account</h3>
+              <p></p>
+              <a href="Login.html">Sign In</a>
+              <a href="#">Help</a>
+            </div>
+            <div class="followus">
+                <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">Follow Us</h3>
+                <div class="socials">
+                  <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+                  <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                  <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+      </footer>
+</body>
+</html>

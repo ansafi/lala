@@ -1,0 +1,435 @@
+:root {
+    --clr-primary: #7380ec;
+    --clr-danger: #ff7782;
+    --clr-success: #41f1b6;
+    --clr-white: #fff;
+    --clr-info-dark: #7d8da1;
+    --clr-info-light: #dce1eb;
+    --clr-dark: #363949;
+    --clr-warnig: #ff4edc;
+    --clr-light: rgba(132, 139, 200, 0.18);
+    --clr-primary-variant: #111e88;
+    --clr-dark-variant: #677483;
+    --clr-color-background: #f6f6f9;
+  
+    --card-border-radius: 2rem;
+    --border-radius-1: 0.4rem;
+    --border-radius-2: 0.8rem;
+    --border-radius-3: 1.2rem;
+  
+    --card-padding: 1.8rem;
+    --padding-1: 1.2rem;
+    --box-shadow: 0 2rem 3rem var(--clr-dark);
+  
+}
+  
+  /* dark theme */
+.dark-theme-variables {
+    --clr-color-background: #181a1e;
+    --clr-white: #202528;
+    --clr-light: rgba(0, 0, 0, 0.4);
+    --clr-dark: #edeffd;
+    --clr-dark-variant: #677483;
+    --box-shadow: 0 2rem 3rem var(--clr-dark)
+}
+
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    appearance: none;
+  }
+  
+  body{
+     width: 100vw;
+     height: 100vh;
+     font-size: .7rem;
+     user-select: none;
+     overflow-x: hidden;
+     background: var(--clr-color-background);
+     font-family: 'Poppins', sans-serif;
+  }
+  
+  .container  {
+    display: grid;
+    width: 96%;
+    gap: 1.8rem;
+    grid-template-columns: 14rem auto 16rem;
+    margin: 0 auto;
+  }
+  a{
+    color: var(--clr-dark);
+  }
+  h1{
+    font-weight: 800;
+    font-size: 2.8rem;
+  }
+  h2{
+    font-size: 1.4rem;
+  }
+  h3{
+    font-size: 0.87;
+  }
+  h4{
+    font-weight: 0.8rem;
+  }
+  h5{
+    font-size: 0.77rem;
+  }
+  small{
+    font-size: 0.75rem;
+  }
+  .profile-photo img{
+    width: 2.8rem;
+    height: 2.8rem;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  .text-muted{
+    color: var(--clr-info-dark);
+  }
+  p{
+    color: var(--clr-dark-variant);
+  }
+  b{
+    color: var(--clr-dark);
+  }
+  .primary {
+    color: var(--clr-primary);
+  }
+
+  .success {
+    color: var(--clr-success);
+  }
+  .danger {
+    color: var(--clr-danger);
+  }
+  .warning {
+    color: var(--clr-warnig);
+  }
+  
+  
+  /* aside */
+   aside{
+    height: 100vh;
+    width: 100%;
+   }
+   aside .top{
+    background: var(--clr-color-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.4rem;
+   }
+   aside .logo{
+     display: flex;
+     gap: 1rem;
+   }
+   aside .logo img{
+     width: 2rem;
+     height: 2rem;
+   }
+   aside .top div.close span{
+     display: none;
+   }
+
+    /* ===================
+ Sidebar
+ ================== */
+
+ aside .sidebar{
+    background: var(--clr-light);
+    display: flex;
+    flex-direction: column;
+    height: 155vh;
+    position: relative;
+    top: 1rem; /*posisi menu*/
+   }
+   aside .sidebar a{
+    display: flex;
+    color: var(--clr-info-dark); /*warna menu nya jadi kyk abu"*/
+    margin-left: 2rem; /*jarak antar menu dengan bg birunya*/
+    gap: 1rem; /*jarak antar ikon dan menu*/
+    align-items: center;
+    height: 3.3rem; /*lebar permenu*/
+    transition: all .1s ease;
+   }
+   aside .sidebar a.active{
+    background-color: var(--clr-light); /*efek ketika dipencet jadi kyk ada kotaknya*/
+    color: var(--clr-primary); /*warna ikon menu ketika dipencet jdi biru*/
+    margin-left: 0;
+    border-left: 5px solid var(--clr-primary); /*ada biru" sebgai tanda klo itu dipencet*/
+    margin-left: calc(1rem - 3px);
+  }
+  .sidebar a.active h3 {
+    color: var(--clr-primary); /* Warna khusus untuk menu aktif */
+}
+   aside .sidebar a span{
+    font-size: 1.6rem;
+    transition: all .3s ease-in-out;
+   }
+   aside .sidebar a:last-child{
+    position: absolute;
+    bottom: 1rem; /*jarak logout dri bottom*/
+    width: 100%;
+   }
+   
+   aside .sidebar a:hover span{
+    margin-left: 1rem;
+   }
+   .sidebar a h3{
+    color: var(--clr-info-dark); 
+    padding-top: 15px; /*menyamakan tulisan menu dgn ikonnya*/
+   }
+   aside .sidebar a span.msg_count{ /*messages*/
+     background-color: var(--clr-danger); /*kotakmerah pada messages yg merah*/
+     color: var(--clr-white); /*tulisan jumlah pesan*/
+     padding: 2px 5px;
+     font-size: 11px;
+     border-radius: var(--border-radius-1);
+   }
+  
+   .content-menu{ /*untuk tulisan judul tiap menu*/
+    padding-top: 20px;
+}
+
+   /*customer*/
+   .customer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+   .input-section, .table-section {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background-color: var(--clr-white);
+    border-radius: var(--border-radius-2);
+    box-shadow: var(--box-shadow);
+  }
+  
+  h3 {
+    margin-bottom: 1rem;
+    color: var(--clr-primary);
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--clr-dark-variant);
+  }
+  
+  .form-group input, .form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--clr-info-light);
+    border-radius: var(--border-radius-1);
+  }
+  
+  button[type="submit"] {
+    padding: 0.8rem 1.6rem;
+    background-color: var(--clr-primary);
+    color: var(--clr-white);
+    border: none;
+    border-radius: var(--border-radius-1);
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: var(--clr-primary-variant);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  table th, table td {
+    padding: 1rem;
+    border: 1px solid var(--clr-info-light);
+    text-align: left;
+  }
+  
+  table th {
+    background-color: var(--clr-info-light);
+    color: var(--clr-dark);
+  }
+  
+  table td {
+    background-color: var(--clr-white);
+  }
+  
+  .action-btn {
+    padding: 0.4rem 0.8rem;
+    margin-right: 0.4rem;
+    background-color: var(--clr-primary);
+    color: var(--clr-white);
+    border: none;
+    border-radius: var(--border-radius-1);
+    cursor: pointer;
+  }
+  
+  .delete-btn {
+    background-color: var(--clr-danger);
+  }
+  
+  .action-btn:hover {
+    opacity: 0.8;
+  }
+
+  /*pesanan*/
+  .table-section-pesanan{
+    margin-top: 20px;
+  }
+
+  /*transaksi*/
+  .table-section-transaksi{
+    margin-top: 20px;
+  }
+
+  /*ide voting*/
+
+  .ideas{
+    margin-top: 10px;
+  }
+  .ideas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.idea {
+    background: rgb(113, 34, 202);
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.idea:hover {
+    transform: scale(1.05);
+}
+
+.idea p {
+    margin: 0;
+    color: white;
+}
+
+/*suplier*/
+/* .suplier */
+.content-suplier {
+  margin-top: 20px;
+}
+
+.tabel-suplier {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: #fff;
+}
+
+.tabel-suplier th, .tabel-suplier td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.tabel-suplier th {
+  background: #f4f4f9; /*warna baris pertama nama kolom*/
+}
+
+.success {
+  color: green;
+}
+
+.warning {
+  color: orange;
+}
+
+.danger {
+  color: red;
+}
+
+.button-sp {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background: #9578da;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.button-sp:hover {
+  background: #0056b3;
+}
+
+  /*right atas*/
+
+  .right{
+    margin-top: 1.4rem;
+  }
+  .right h2{
+    color: var(--clr-dark);
+  }
+  .right .top{
+    display: flex;
+    justify-content: start;
+    gap: 2rem;
+  }
+  
+  .right .top button{
+    display: none;
+  }
+  
+  .right .theme-toggler{
+    background: var(--clr-white);
+    display: flex;
+    justify-content: space-between;
+    height: 1.6rem;
+    width: 4.2rem;
+    cursor: pointer;
+    border-radius: var(--border-radius-1);
+  }
+  .right .theme-toggler span{
+    font-size: 1.2rem;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .right .theme-toggler span.active{
+    background: var(--clr-primary);
+    color: #fff;
+  }
+  
+  
+  .right .top .profile{
+    display: flex;
+    gap: 2rem;
+    text-align: right;
+  }
+  .right  .info h3{
+    color: var(--clr-dark);
+  }
+  .right  .item h3{
+    color: var(--clr-dark);
+  }
+
+.input-section{
+    margin-top: 20px;
+}

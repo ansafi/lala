@@ -1,0 +1,91 @@
+    /*About Us*/
+    /*About Us*/
+.aboutUs {
+    margin-top: 20px;
+    text-align: center;
+}
+.aboutUs p{
+    padding: 0 100px;
+    font-size: small;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+} 
+
+    /*logo wa*/
+    /*logo wa*/
+#wa { /*posisi*/
+    position: fixed;
+    bottom: 30px; /* Jarak dari bawah layar */
+    right: 30px;  /* Jarak dari kanan layar */
+    z-index: 999; /* Pastikan elemen berada di atas elemen lain */
+}
+#wa img { /*ukuran gambar*/
+    border-radius: 30%;
+    width: 50px;  /* Sesuaikan ukuran gambar */
+    height: 50px; /* Sesuaikan ukuran gambar */
+}
+
+    /*persyaratan dan ketentuan*/
+    /*persyaratan dan ketentuan*/
+.persyaratan {
+    margin-top: 100px;
+    text-align: left;
+    font-size: smaller;
+    padding-left: 100px;
+}
+.persyaratan p{
+    padding-right: 50px;
+} 
+
+
+  /* footer section styles */
+  /* footer section styles */
+  #footer{
+    display: flex;
+    align-items:flex-start;
+    margin-top: 50px;
+    justify-content: space-between;
+    padding: 5px; /*tinggi footer*/
+    background-color: #FFE2B5;
+  }
+  #footer img {
+    margin-left: 80px;
+    margin-top: 20px;
+    width: 80px; /* Menyesuaikan ukuran gambar */
+    height: auto;
+  }
+  #footer p{
+    color: rgb(109, 109, 109);
+    text-decoration: none;
+    margin-left: 30px;
+  }
+  #footer a{
+    color: rgb(109, 109, 109);
+  }
+  #footer .socials{
+    margin-left: 20px;
+  }
+  #footer .followus h3{
+    margin-right: 70px;
+    margin-top: 25px;
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  #footer a:hover{
+    color:#088178;
+  }
+  #footer .contact h3{ /*tulisan contact*/
+    margin-left: 30px;
+    font-weight: bold;
+  }
+  #footer .about h3,
+  #footer .myaccount h3 {
+    font-weight: bold;
+  }
+  #footer .about a{
+    display: block;
+    padding:8px 0;
+  }
+  #footer .myaccount a{
+    display: block;
+    padding:8px 0;
+  }

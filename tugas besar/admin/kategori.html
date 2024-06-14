@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Dashboard</title>
+  <link rel="shortcut icon" type="x-icon" href="LOGO (1).png"> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet" href="menu.css">
+  <style>
+    /* body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    } */
+
+    /* .container {
+      width: 90%;
+      max-width: 1200px;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    } */
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    .user-section {
+      display: flex;
+      align-items: center;
+    }
+
+    .assign-member {
+      background-color: #f0ad4e;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin-right: 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .user-info span {
+      margin-right: 10px;
+    }
+    
+    .table-section {
+      margin-top: 20px; /*batas tabel dengn atasnya*/
+    }
+
+    .table-section table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .table-section th, .table-section td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    /* .table-section th {
+      background-color: #f4f4f4; /warna baris kolom atas sndiri/
+    } */
+
+    .action-btn {
+      padding: 5px 10px;
+      margin-right: 5px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      color: white;
+    }
+
+    .increment-btn {
+      background-color: #28a745;
+    }
+
+    .delete-btn {
+      background-color: #dc3545;
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <aside> 
+            <div class="top"> <!--logo dan tulisan merchantry -->
+                <div class="profile-photo">
+                    <img src="LOGO (1).png" alt=""/>
+                
+                </div>
+                <h2> <span class="danger">Merchantry</span> </h2>
+                <div class="close" id="close_btn">
+                    <span class="material-symbols-sharp">
+                    close
+                    </span>
+                </div>
+            </div>
+            
+        
+            <div class="sidebar"> <!--daftar menu-->
+                <a href="index.html"  id="dashboard_menu">
+                    <span class="material-symbols-sharp">grid_view </span>
+                    <h3>Dashbord</h3>
+                </a>
+                <a href="customer.html"  id="custumers">
+                    <span class="material-symbols-sharp">person_outline </span>
+                    <h3>Customer</h3>
+                </a>
+                <a href="produk.html"id="Products">
+                    <span class="material-symbols-sharp">receipt_long </span>
+                    <h3>Products</h3>
+                </a>
+                <a href="kategori.html" class="active" id="Kategori">
+                <span class="material-symbols-sharp">category</span>
+                    <h3>Kategori</h3>
+                </a>
+                <a href="pesanan.html"id="Pesanan">
+                <span class="material-symbols-sharp">shopping_bag</span>
+                    <h3>Pesanan</h3>
+                </a>
+                <a href="transaksi.html" id="Transaksi">
+                <span class="material-symbols-sharp">payments</span>
+                    <h3>Transaksi</h3>
+                </a>
+                <a href="ide.html"Idea Voting">
+                <span class="material-symbols-sharp">emoji_objects</span>
+                    <h3>Idea Voting</h3>
+                </a>
+                <a href="suplier.html"id="suplier">
+                  <span class="material-symbols-sharp">local_shipping </span>
+                  <h3>Suplier</h3>
+              </a>
+                <a href="../navbar/Login.html"id="logout">
+                    <span class="material-symbols-sharp">logout </span>
+                    <h3>logout</h3>
+                </a>
+            </div> <!--end daftar menu-->
+        </aside>
+
+        <!--main-->
+        <main>
+
+            <div class="content-menu">
+                <h1>Kategori</h1>
+            </div>
+            <div class="table-section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama Produk</th>
+                            <th>Harga</th>
+                            <th>Stok</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Blouse</td>
+                            <td>Rp 50.000</td>
+                            <td>10</td>
+                            <td>
+                            <button class="action-btn increment-btn">+</button>
+                            <button class="action-btn delete-btn">x</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Kemeja</td>
+                            <td>Rp 45.000</td>
+                            <td>30</td>
+                            <td>
+                            <button class="action-btn increment-btn">+</button>
+                            <button class="action-btn delete-btn">x</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Hoodie</td>
+                            <td>Rp 83.000</td>
+                            <td>32</td>
+                            <td>
+                            <button class="action-btn increment-btn">+</button>
+                            <button class="action-btn delete-btn">x</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Sweater</td>
+                            <td>Rp 45.000</td>
+                            <td>24</td>
+                            <td>
+                            <button class="action-btn increment-btn">+</button>
+                            <button class="action-btn delete-btn">x</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Blazer</td>
+                            <td>Rp 69.000</td>
+                            <td>14</td>
+                            <td>
+                            <button class="action-btn increment-btn">+</button>
+                            <button class="action-btn delete-btn">x</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>T-Shirt</td>
+                            <td>Rp 28.000</td>
+                            <td>50</td>
+                            <td>
+                            <button class="action-btn increment-btn">+</button>
+                            <button class="action-btn delete-btn">x</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Tunik</td>
+                            <td>Rp 48.000</td>
+                            <td>13</td>
+                            <td>
+                            <button class="action-btn increment-btn">+</button>
+                            <button class="action-btn delete-btn">x</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+
+        <div class="right">
+            <div class="top"> <!--bagian kanan atas-->
+                <button id="menu_bar">
+                <span class="material-symbols-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                <span class="material-symbols-sharp active">light_mode</span>
+                <span class="material-symbols-sharp">dark_mode</span>
+                </div>
+                <div class="profile">
+                    <div class="info">
+                        <p><b>Yunita Sangadji</b></p>
+                        <p>Admin</p>
+                        <small class="text-muted"></small>
+                    </div>
+                    <div class="profile-photo">
+                    <img src="profile-1.jpg" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

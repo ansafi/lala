@@ -1,0 +1,639 @@
+        /*LOGIN*/
+        /*LOGIN*/
+        * {
+          /*untuk background full cover*/
+          margin: 0;
+          padding: 0;
+        }
+
+        .sectiion {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100vh;
+          background: url(images_navbar/BG_LOGIN.jpg) no-repeat center center;
+          background-size: cover;
+          background-position: center;
+          padding-left: 0px;
+        }
+
+        .form-container {
+          position: relative;
+          width: 400px;
+          /* lebar kotak */
+          max-width: 100%;
+          height: 450px;
+          /*tinggi kotak*/
+          padding: 20px;
+          background: rgba(255, 255, 255, 0.1);
+          border: 2px solid black;
+          border-radius: 20px;
+          backdrop-filter: blur(15px);
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          /* Changed from center to flex-start */
+        }
+
+        .login-box,
+        .register-box {
+          width: 100%;
+          display: none;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .login-box.active,
+        .register-box.active {
+          display: block;
+          /*mengatur panjang garisnya dan jaraknya email pass*/
+        }
+
+        .h2login {
+          margin-top: 30px;
+          /*jarak tulisan login/reg dengan kotak atas*/
+          font-size: 2em;
+          /* Adjusted font size */
+          color: black;
+          text-align: center;
+          margin-bottom: 50px;
+          /*jarak antara judul login/reg degn email*/
+        }
+
+        .input-box {
+          /*email pass username*/
+          position: relative;
+          width: 100%;
+          margin: 10px 0;
+          border-bottom: 2px solid black;
+          /*garis email pass*/
+        }
+
+        .input-box label {
+          position: absolute;
+          top: 50%;
+          /*jarak email dgn garis bawh*/
+          left: 5px;
+          transform: translateY(-50%);
+          font-size: 1em;
+          /*tulisan email pass*/
+          color: white;
+          pointer-events: none;
+          transition: .5s;
+        }
+
+        .input-box input:focus~label,
+        .input-box input:valid~label {
+          top: -5px;
+          font-size: 0.75em;
+        }
+
+        .input-box input {
+          /*box input email pass*/
+          width: 100%;
+          height: 35px;
+          /* tinggi email dgn garis */
+          background: transparent;
+          border: none;
+          outline: none;
+          font-size: 1em;
+          color: black;
+          padding: 0 25px 0 5px;
+        }
+
+        .input-box .icon {
+          position: absolute;
+          right: 8px;
+          color: black;
+          font-size: 1.2em;
+          line-height: 35px;
+          /* Adjusted line height */
+        }
+
+        /*tulisan forgot pass*/
+        .remember-forgot {
+          margin: 10px 0 20px;
+          font-size: .9em;
+          color: black;
+          display: flex;
+          justify-content: space-between;
+          width: 100%;
+        }
+
+        .remember-forgot label input {
+          margin-right: 5px;
+          /*jarak ceklist dgn remember me*/
+        }
+
+        .remember-forgot a {
+          /*forgot pass*/
+          color: black;
+          text-decoration: none;
+        }
+
+        .remember-forgot a:hover {
+          /*forgot ketika kursor diarahkan*/
+          color: red;
+          text-decoration: underline;
+        }
+
+        .pencetlogin {
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          width: 100%;
+          height: 35px;
+          /* Adjusted height */
+          background-color: white;
+          outline: none;
+          border: none;
+          border-radius: 20px;
+          cursor: pointer;
+          font-size: 1em;
+          color: black;
+          font-weight: 500;
+          margin: 20px 0;
+          font-weight: 600;
+          /*tebal huruf*/
+        }
+
+        /*tulisan register bwah*/
+        .register-link {
+          font-size: .9em;
+          color: black;
+          text-align: center;
+          margin: 20px 0 10px;
+        }
+        .register-link p a {
+          color: black;
+          text-decoration: none;
+          font-weight: 600;
+        }
+
+        .register-link p a:hover {
+          text-decoration: underline;
+          color: red;
+        }
+        /* .form-group{
+          margin-top: 10px;
+        } */
+        @media (max-width: 360px) {
+          .sectiion {
+            padding: 20px;
+          }
+
+          .form-container {
+            padding: 10px;
+          }
+        }
+
+      /*categori*/
+      /*categori*/
+    body{
+        background-color: white;
+        font-family: system-ui;
+    }
+    .container{
+        width: 1000px;
+        margin: auto;
+        transition: 0.5s;
+    }
+    header{
+        display: grid;
+        grid-template-columns: 1fr 50px;
+        margin-top: 100px;
+    }
+    header .shopping{
+        position: relative;
+        text-align: right;
+    }
+    header .shopping img{
+        width: 40px;
+    }
+    header .shopping span{
+        background: red;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        position: absolute;
+        top: -5px;
+        left: 80%;
+        padding: 3px 10px;
+    }
+    .list{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+        row-gap: 20px;
+        margin-top: 50px;
+    }
+    .list .item{
+        text-align: center;
+        background-color: #DCE0E1;
+        padding: 20px;
+        box-shadow: 0 50px 50px #757676;
+        letter-spacing: 1px;
+    }
+    .list .item img{
+        width: 90%;
+        height: 430px;
+        object-fit: cover;
+    }
+    .list .item .title{
+        font-weight: 600;
+    }
+    .list .item .price{
+        margin: 10px;
+    }
+    .list .item button{
+        background-color: #1C1F25;
+        color: #fff;
+        width: 100%;
+        padding: 10px;
+    }
+    .card{
+        position: fixed;
+        top:0;
+        left: 100%;
+        width: 500px;
+        background-color: #453E3B;
+        height: 100vh;
+        transition: 0.5s;
+        z-index: 1000; /* Pastikan z-index card lebih tinggi dari navbar */
+    }
+    .active .card{
+        left: calc(100% - 500px);
+    }
+    .active .container{
+       transform: translateX(-200px);
+    }
+    .card h1{
+        color: #E8BC0E;
+        font-weight: 100;
+        margin: 0;
+        padding: 0 20px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+    }
+    .card .checkOut{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    
+    }
+    .card .checkOut div{
+        background-color: #E8BC0E;
+        width: 100%;
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .card .checkOut div:nth-child(2){
+        background-color: #1C1F25;
+        color: #fff;
+    }
+    .listCard li{
+        display: grid;
+        grid-template-columns: 100px repeat(3, 1fr);
+        color: #fff;
+        row-gap: 10px;
+    }
+    .listCard li div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .listCard li img{
+        width: 90%;
+    }
+    .listCard li button{
+        background-color: #fff5;
+        border: none;
+    }
+    .listCard .count{
+        margin: 0 10px;
+    }
+    
+
+    /*voting*/
+    /*voting*/
+    .vote {
+      font-family: Gill 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,sans-serif;
+      background-color: white;
+      margin: 0;
+      padding: 0;
+  }
+  .IdeaVoting {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 50px;
+      background-color: #fff0f0; /* Ganti nilai ini dengan warna background yang diinginkan */
+  }
+  .IdeaVoting .row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      width: 80%;
+  }
+  .IdeaVoting .row form {
+      flex: 1;
+      padding: 2rem 2.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(233, 202, 202, 0.1);
+      background: #b88469;
+      border-radius: 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+  }
+  .IdeaVoting .row .image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .IdeaVoting .row .image img { /*begaya*/
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+  }
+  .IdeaVoting .row form .heading {
+      position: right;
+      top: -1.5rem;
+      left: 50%;
+      transform: translateX(-5%);
+      background: #b88469;
+      padding: 0 10px;
+      color: #000;
+      font-size: 2rem;
+  }
+  .IdeaVoting .row form .box {
+      padding: 10px;
+      font-size: 1rem;
+      color: #333;
+      text-transform: none;
+      border: 1px solid rgba(173, 102, 102, 0.1);
+      border-radius: 15px;
+      margin: .7rem 0;
+      width: 100%;
+  }
+  .IdeaVoting .row form .box:focus {
+      border-color: var(--pink);
+  }
+  .IdeaVoting .row form textarea {
+      height: 5rem;
+      resize: none;
+  }
+  .IdeaVoting .row form .btn {
+      align-self: flex-end;
+      padding: 10px 40px;
+      font-size: 1.2rem;
+      background-color: #e4816f;
+      color: rgb(0, 0, 0);
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-top: 1rem;
+  }
+  .IdeaVoting .row form .btn:hover {
+      background-color: #a37665;
+  }
+  .large-image{
+      width: 150px;
+      height: auto;
+  }
+  .kotak{
+      margin-left: 20px;
+  }
+  .content {
+      margin-top: 20px; /* Jarak antara content dengan elemen di atasnya */
+  }
+  .content {
+      padding: 20px;
+  
+  }
+  
+  .ideas-section {
+      display: flex;
+      margin-top: 20px;
+      justify-content: space-around;
+  }
+  
+  .ideas {
+      width: 45%;
+  }
+  .card {
+      background-color: #e0e0e0;
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+  }
+  
+  .profile-pic {
+      margin-right: 10px;
+  }
+  
+  .profile-pic img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+  }
+  
+  .vote-button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff6347;
+      color: white;
+      cursor: pointer;
+      margin-right: 5px;
+      margin-left: 10px;
+  }
+  
+  .vote-button:hover {
+      background-color: #ff4500;
+  }
+  
+  .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+  }
+
+/*keranjang*/
+.keranjang {
+  font-family: Arial, sans-serif;
+  background-image: url('images_navbar/keranjang/background.jpg'); /* Ganti dengan path gambar latar belakang Anda */
+  background-size: cover;
+  background-position: left;
+  margin: 0;
+  padding: 0;
+}
+
+.container-keranjang {
+  width: 90%;
+  margin: 50px auto;
+  padding: 100px;
+  /*background-color: rgba(255, 255, 255, 0.8); /* Menambahkan transparansi */
+}
+.tbl-keranjang {
+  width: 95%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.tbl-keranjang, th, td {
+  border: 1px solid #888181;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+th {
+  background-color: #d4a35ecc;
+}
+.qty-buttons {
+  display: flex;
+  align-items: center;
+}
+.qty-buttons button {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  background-color: #d4a35ecc;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.total {
+  font-weight: bold;
+}
+.button {
+  display: block;
+  width: 94%;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #d4a35ecc;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.remove-button {
+  background-color: #d4a35ecc;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding-top: 60px;
+}
+.modal-content {
+  background-color: #fefefeed;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.virtual-account {
+  display: none;
+  margin-top: 20px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+.virtual-account p {
+  margin: 0;
+  font-size: 18px;
+}
+
+
+
+      /*footer*/
+      /*footer*/
+      #footer{
+        display: flex;
+        align-items:flex-start;
+        margin-top: 100px;
+        justify-content: space-between;
+        padding: 5px; /*tinggi footer*/
+        background-color: #FFE2B5;
+      }
+      #footer img {
+        margin-left: 80px;
+        margin-top: 20px;
+        width: 80px; /* Menyesuaikan ukuran gambar */
+        height: auto;
+      }
+      #footer p{
+        color: rgb(109, 109, 109);
+        text-decoration: none;
+        margin-left: 30px;
+      }
+      #footer a{
+        color: rgb(109, 109, 109);
+      }
+      #footer .socials{
+        margin-left: 20px;
+      }
+      #footer .followus h3{
+        margin-right: 70px;
+        margin-top: 25px;
+        margin-left: 20px;
+        font-weight: bold;
+      }
+      #footer a:hover{
+        color:#088178;
+      }
+      #footer .contact h3{ /*tulisan contact*/
+        margin-left: 30px;
+        font-weight: bold;
+      }
+      #footer .about h3,
+      #footer .myaccount h3 {
+        font-weight: bold;
+      }
+      #footer .about a{
+        display: block;
+        padding:8px 0;
+      }
+      #footer .myaccount a{
+        display: block;
+        padding:8px 0;
+      }
