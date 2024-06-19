@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanjaan</title>
+    <link rel="shortcut icon" type="x-icon" href="../images/LOGO (1).png"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: left;
+      z-index: 999; /* Pastikan z-index navbar lebih rendah dari card  supaya tampilan card berada di atas sendiri*/ 
+    }
+    .brand-container {
+      display: flex;
+      align-items: center;
+    }
+    .nav-tabs { 
+      display: flex;
+      margin-bottom: 0;
+      align-items: center;
+    }
+    .navbar-brand {
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+      font-size: 35px;
+      font-style: oblique;
+      color: black;
+    }
+    .container-fluid{
+      background-color: #FFE2B5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 5px 50px;
+      z-index: 999;
+      position:fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+
+        
+    </style>
+</head>
+<body class="keranjang">
+    <nav class="navbar bg-light">
+        <div class="container-fluid">
+            <div class="brand-container">
+                <img src="../images/LOGO (1).png" alt="Logo" width="80" height="74" class="d-inline-block align-text-top">
+                <a class="navbar-brand" href="#">Merchantry</a>
+            </div>
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                <a class="nav-link"  href="../index.html" style="color: black" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link"  href="categori.html" style="color: black" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Category</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="uservoting.html" style="color: black" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Voting</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="Login.html" style="color: black" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Login</a>
+        
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="keranjang.html">
+                    <img src="images_navbar/keranjang.png" alt="Descriptive text" width="50" height="50">
+                </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-keranjang">
+        <table class="tbl-keranjang">
+            <tr>
+                <th>Remove</th>
+                <th>Image</th>
+                <th>Produk</th>
+                <th>Price</th>
+                <th>QTY</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td><button class="remove-button" onclick="removeItem(this)">X</button></td>
+                <td><img src="images_navbar/keranjang/daster.jpg" alt="Daster" width="50"></td>
+                <td>Daster</td>
+                <td>Rp 50.000</td>
+                <td>
+                    <div class="qty-buttons">
+                        <button onclick="updateQty(this, -1)">-</button>
+                        <input type="text" value="1" readonly>
+                        <button onclick="updateQty(this, 1)">+</button>
+                    </div>
+                </td>
+                <td>Rp <span class="item-total">50.000</span></td>
+            </tr>
+            <tr>
+                <td><button class="remove-button" onclick="removeItem(this)">X</button></td>
+                <td><img src="images_navbar/keranjang/jeans.jpg" alt="Jeans" width="50"></td>
+                <td>Jeans</td>
+                <td>Rp 100.000</td>
+                <td>
+                    <div class="qty-buttons">
+                        <button onclick="updateQty(this, -1)">-</button>
+                        <input type="text" value="2" readonly>
+                        <button onclick="updateQty(this, 1)">+</button>
+                    </div>
+                </td>
+                <td>Rp <span class="item-total">200.000</span></td>
+            </tr>
+            <tr class="total">
+                <td colspan="5">Total Pembayaran</td>
+                <td>Rp <span id="grand-total">250.000</span></td>
+            </tr>
+        </table>
+        <div class="button" onclick="openModal()">BAYAR</div>
+    </div>
+
+    <!-- Modal for Payment Method -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Metode Pembayaran Transfer Bank</h2>
+            <form id="payment-form" onsubmit="return false;">
+                <button onclick="showVirtualAccount('BNI')">BNI</button>
+                <button onclick="showVirtualAccount('MANDIRI')">MANDIRI</button>
+                <button onclick="showVirtualAccount('BCA')">BCA</button>
+                <div id="virtualAccountDisplay" style="display: none;">
+                    <p>No Virtual Account Anda:</p>
+                    <p id="virtualAccountNumber"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div id="footer">
+            <div class="contact">
+              <a href="../index.html"><img src="../images/LOGO (1).png" alt="" /></a>
+              <p> </p>
+              <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">Contact</h3>
+              <address>
+                <p><b>Address:</b> Bukit Cemara Tujuh Blok 9 Kav 67</p>
+                <p><b>Phone:</b> 081937539482</p>
+                <p><b>Hours</b> 10:00 - 18:00. Mon - Sat</p>
+              </address>
+            </div>
+            <div class="about">
+              <br>
+              <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">About</h3>
+              <p></p> 
+              <a href="../footer/aboutUs.html">About Us</a>
+              <a href="#">Delivery Information</a>
+              <a href="../footer/ketentuan.html">Persyaratan & Ketentuan</a>
+              <!-- <a href="#">Terms & Conditions</a>  -->
+              <a href="https://wa.me/+6281937539482">Contact Us</a>
+            </div>
+            <div class="myaccount ">
+              <br>
+              <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">My account</h3>
+              <p></p>
+              <a href="Login.html">Sign In</a>
+              <a href="#">Help</a>
+            </div>
+            <div class="followus">
+                <h3 style="font-family: Georgia, 'Times New Roman', Times, serif;">Follow Us</h3>
+                <div class="socials">
+                  <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+                  <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                  <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                  <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+      
+    <script>
+        function updateQty(button, change) {
+            var input = button.parentNode.querySelector('input');
+            var qty = parseInt(input.value) + change;
+            if (qty < 1) qty = 1;
+            input.value = qty;
+
+            var priceCell = button.closest('tr').querySelectorAll('td')[3];
+            var price = parseInt(priceCell.innerText.replace('Rp ', '').replace('.', ''));
+
+            var totalCell = button.closest('tr').querySelector('.item-total');
+            var newTotal = price * qty;
+            totalCell.innerText = newTotal.toLocaleString('id-ID');
+
+            updateGrandTotal();
+        }
+
+        function removeItem(button) {
+            var row = button.closest('tr');
+            row.parentNode.removeChild(row);
+            updateGrandTotal();
+        }
+
+        function updateGrandTotal() {
+            var grandTotal = 0;
+            document.querySelectorAll('.item-total').forEach(function(itemTotal) {
+                grandTotal += parseInt(itemTotal.innerText.replace('.', ''));
+            });
+            document.getElementById('grand-total').innerText = grandTotal.toLocaleString('id-ID');
+        }
+
+        function openModal() {
+            document.getElementById('paymentModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        function showVirtualAccount(method) {
+            var virtualAccountNumber = generateVirtualAccountNumber(method);
+            document.getElementById('virtualAccountNumber').innerText = virtualAccountNumber;
+            document.getElementById('virtualAccountDisplay').style.display = 'block';
+        }
+
+        function generateVirtualAccountNumber(method) {
+            // Logic to generate virtual account number based on method
+            switch(method) {
+                case 'BNI':
+                    return "VA123456789 (BNI)";
+                case 'MANDIRI':
+                    return "VA987654321 (MANDIRI)";
+                case 'BCA':
+                    return "VA567890123 (BCA)";
+                default:
+                    return "";
+            }
+        }
+    </script>
+</body>
+</html>
